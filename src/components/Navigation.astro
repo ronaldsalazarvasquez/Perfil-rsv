@@ -1,0 +1,117 @@
+---
+const navLinks = [
+  { name: 'Inicio', href: '#home' },
+  { name: 'Proyectos', href: '#projects' },
+  { name: 'Tecnologías', href: '#technologies' },
+  { name: 'Contacto', href: '#contact' }
+];
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <div class="glass-dark rounded-full px-6 py-3 flex items-center justify-between">
+      <!-- Logo/Name -->
+      <a href="#home" class="text-xl font-bold gradient-text hover:scale-105 transition-transform" style="font-family: var(--font-pixel); font-size: 0.875rem;">
+        RS
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-gray-300 hover:text-white transition-colors relative group"
+            style="font-family: var(--font-main);"
+          >
+            {link.name}
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#059669] to-[#E80EA6] group-hover:w-full transition-all duration-300"></span>
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button -->
+      <a
+        href="#contact"
+        class="hidden md:inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#059669] to-[#E80EA6] text-white text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-[#10b981]/50 transition-all duration-300 hover:scale-105 hover:bg-[#059669]"
+        style="font-family: var(--font-main);"
+      >
+        <span>Contactar</span>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 mt-2">
+    <div class="glass-dark rounded-2xl p-6 space-y-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block text-gray-300 hover:text-white py-2 px-4 hover:bg-white/5 rounded-lg transition-all mobile-link"
+          style="font-family: var(--font-main);"
+        >
+          {link.name}
+        </a>
+      ))}
+      <a
+        href="#contact"
+        class="block text-center px-6 py-3 bg-[#10b981] text-white font-semibold rounded-full hover:shadow-lg hover:shadow-[#10b981]/50 transition-all duration-300 mobile-link hover:bg-[#059669]"
+        style="font-family: var(--font-main);"
+      >
+        Contactar
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      navbar?.classList.remove('shadow-lg');
+    } else {
+      navbar?.classList.add('shadow-lg', 'shadow-black/20');
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('#mobile-menu') && !target.closest('#mobile-menu-button')) {
+      mobileMenu?.classList.add('hidden');
+    }
+  });
+</script>
