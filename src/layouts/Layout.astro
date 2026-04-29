@@ -16,11 +16,11 @@ const socialImageURL = new URL(image, Astro.site || Astro.url).href;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="overflow-x-hidden overscroll-x-none">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
@@ -64,7 +64,7 @@ const socialImageURL = new URL(image, Astro.site || Astro.url).href;
       }
     </script>
   </head>
-  <body class="antialiased overflow-x-hidden transition-colors duration-500">
+  <body class="antialiased overflow-x-hidden overscroll-x-none w-full transition-colors duration-500">
     <slot />
 
     <script>
