@@ -1,13 +1,14 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 @theme {
   --color-accent: #10b981;
   --color-accent-dark: #059669;
   --color-accent-light: #34d399;
 
-  --font-pixel: 'Press Start 2P', monospace;
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-handwriting: 'Caveat', cursive;
+  --font-heading: 'Outfit', sans-serif;
 
   --animate-fade-in: fade-in 0.8s ease-out forwards;
   --animate-slide-up: slide-up 0.8s ease-out forwards;
@@ -17,15 +18,51 @@
 
 * {
   scroll-behavior: smooth;
+  /* Duolingo style bounce/transition logic normally goes per-element, but we can set a global box-sizing if needed */
+}
+
+/* Light Mode Defaults (Hueso/Perla) */
+:root {
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  --bg-main: #ffffff;
+  --text-main: #09090b;
+  --text-muted: #52525b;
+  --border-glass: rgba(0, 0, 0, 0.08);
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --bg-glass-hover: rgba(255, 255, 255, 1);
+  --bg-card: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  
+  --bg-accent-gradient-1: none;
+  --bg-accent-gradient-2: none;
+  --bg-accent-gradient-3: none;
+}
+
+/* Dark Mode Overrides */
+html.dark {
+  --bg-main: #000000;
+  --text-main: #ffffff;
+  --text-muted: #a3a3a3;
+  --border-glass: rgba(255, 255, 255, 0.15);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass-hover: rgba(255, 255, 255, 0.1);
+  --bg-card: #0a0a0a;
+  --shadow-color: rgba(0, 0, 0, 0.8);
+
+  --bg-accent-gradient-1: none;
+  --bg-accent-gradient-2: none;
+  --bg-accent-gradient-3: none;
 }
 
 body {
   font-family: var(--font-main);
-  background-color: #0a0a0a;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+  background-color: var(--bg-main);
+  background-image: var(--bg-accent-gradient-1), var(--bg-accent-gradient-2), var(--bg-accent-gradient-3);
   background-attachment: fixed;
+  color: var(--text-main);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Animaciones */
@@ -154,22 +191,33 @@ body {
   background: linear-gradient(135deg, #10b981, #34d399);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
 }
 
 /* Efectos de blur y glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
 }
 
 .glass-dark {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 4px 30px var(--shadow-color);
+}
+
+.glass-emerald {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.02));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
 }
 
 /* Scrollbar personalizado */

@@ -1,280 +1,302 @@
 ---
-const projects = [
-  {
-    title: 'Eureka',
-    subtitle: 'Ganador de Hackathon',
-    description: 'Repositorio de ideas que incentiva a estudiantes y profesionales a mostrar sus proyectos.',
-    tags: ['React', 'Node.js', 'MySQl'],
-    image: '/images/projects/eureka.webp',
-    demoLink: 'https://eureka-app-pi.vercel.app/'
-  },
-  {
-    title: 'Gestión de Herramientas',
-    subtitle: 'Industria Manufacturera',
-    description: 'Sistema para la gestión y trazabilidad de herramientas y dispositivos de bloqueo.',
-    tags: ['React', 'FastAPI', 'PostgreSQL'],
-    image: '/images/projects/gestion-herramientas.webp',
-    demoLink: 'https://inventario-taller-black.vercel.app/'
-  },
-  {
-    title: 'Lectura KPI en Tiempo Real',
-    subtitle: 'Industria Manufacturera',
-    description: 'Plataforma de monitoreo y análisis de indicadores clave de proceso en tiempo real.',
-    tags: ['React', 'WebSockets', 'InfluxDB'],
-    image: '/images/projects/kpi-realtime.webp',
-    demoLink: null
-  },
-  {
-    title: 'Sistema Copiloto IA',
-    subtitle: 'IA Industrial',
-    description: 'Copiloto inteligente que indica decisiones oportunas ante desvíos o fallas.',
-    tags: ['Next.js', 'Python', 'OpenAI'],
-    image: 'images/projects/copiloto.webp',
-    demoLink: null
-  },
-  {
-    title: 'Asistente Médico con IA',
-    subtitle: 'Salud Digital',
-    description: 'Plataforma que conecta doctores y pacientes con soporte inteligente.',
-    tags: ['Next.js', 'Python', 'OpenAI'],
-    image: '/images/projects/asistente-medico.webp',
-    demoLink: null
-  },
-  {
-    title: 'EcoModulator',
-    subtitle: 'Industria Manufacturera',
-    description: 'App Mobile y web para monitoreo ambiental y optimización energética.',
-    tags: ['IoT', 'Machine Learning', 'Cloud'],
-    image: '/images/projects/T-minus.webp',
-    demoLink: null
-  }
-];
+import { projects } from '../data/projects';
+
+// Para paginar, mostraremos los primeros 4 por defecto
+// y el resto se manejará a través de JS
+const INITIAL_VISIBLE = 4;
 ---
 
-<section id="projects" class="py-20 px-4">
-  <div class="max-w-7xl mx-auto">
+<section id="projects" class="py-24 md:py-32 px-4 relative">
+  <!-- Subtle Background Accent -->
+  <div class="absolute right-0 top-1/4 w-[500px] h-[500px] bg-emerald-600/5 rounded-full blur-[120px] pointer-events-none transform-gpu will-change-transform"></div>
+  <div class="absolute left-0 bottom-1/4 w-[500px] h-[500px] bg-cyan-600/5 rounded-full blur-[120px] pointer-events-none transform-gpu will-change-transform"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
     <!-- Header -->
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#10b981]" style="font-family: var(--font-main);">
+    <div class="mb-12 text-center md:text-left projects-header opacity-0 translate-y-12">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-sm mb-4 font-bold shadow-sm">
+        Trayectoria
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight" style="font-family: var(--font-heading);">
         Proyectos Destacados
       </h2>
-      <p class="text-gray-400 text-lg" style="font-family: var(--font-main);">
-        Soluciones reales que han generado impacto
+      <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl" style="font-family: var(--font-main);">
+        Soluciones tecnológicas escalables diseñadas para optimizar procesos y generar <strong class="text-gray-900 dark:text-white font-bold">resultados medibles</strong>.
       </p>
     </div>
 
-    <!-- Projects Grid 3x2 (responsive) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((project, index) => (
-        <div class="group relative bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-[#10b981]/50 transition-all duration-300 hover:transform hover:scale-105">
-          <!-- Image -->
-          <div class="relative h-48 overflow-hidden">
-            <img
-              src={project.image}
-              alt={project.title}
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Crect fill=%22%23111%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-size=%2220%22 fill=%22%2310b981%22%3E{project.title}%3C/text%3E%3C/svg%3E'"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-
-          <!-- Content -->
-          <div class="p-6">
-            <!-- Title -->
-            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-[#10b981] transition-colors" style="font-family: var(--font-main);">
-              {project.title}
-            </h3>
-
-            <!-- Subtitle -->
-            <p class="text-sm text-gray-500 mb-3" style="font-family: var(--font-main);">
-              {project.subtitle}
-            </p>
-
-            <!-- Description -->
-            <p class="text-gray-400 text-sm mb-4 line-clamp-2" style="font-family: var(--font-main);">
-              {project.description}
-            </p>
-
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              {project.tags.map((tag) => (
-                <span class="px-2 py-1 bg-white/5 text-gray-500 text-xs rounded border border-white/10" style="font-family: var(--font-main);">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <!-- Demo Button (always present) -->
-            {project.demoLink ? (
-              <a
-                href={project.demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-[#112E11] text-white text-sm font-medium rounded-lg hover:bg-[#059669] transition-colors w-full justify-center"
-                style="font-family: var(--font-main);"
-              >
-                <span>Ver Demo</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            ) : (
-              <button
-                class="demo-button inline-flex items-center gap-2 px-4 py-2 bg-[#112E11] text-white text-sm font-medium rounded-lg hover:bg-[#059669] transition-colors w-full justify-center"
-                style="font-family: var(--font-main);"
-                data-project={project.title}
-              >
-                <span>Ver Demo</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </button>
-            )}
-          </div>
-
-          <!-- Bottom Accent Line -->
-          <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#10b981] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-        </div>
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-24 project-filters opacity-0 translate-y-8">
+      {['Todos', ...new Set(projects.map(p => p.category).filter(Boolean))].map((cat, index) => (
+        <button 
+          class={`filter-btn px-6 py-2.5 rounded-full border-2 transition-all shadow-sm font-bold text-sm ${index === 0 ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'border-transparent bg-white dark:bg-white/5 text-gray-600 dark:text-gray-300 hover:border-emerald-500/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}
+          data-category={cat}
+          style="font-family: var(--font-main);"
+        >
+          {cat}
+        </button>
       ))}
     </div>
-  </div>
 
-  <!-- Toast Notification for Local Projects -->
-  <div id="toast-notification" class="fixed top-24 right-4 max-w-md opacity-0 pointer-events-none transition-all duration-500 transform translate-x-full z-50">
-    <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-2xl border border-[#10b981]/30 overflow-hidden">
-      <div class="p-6 flex items-start gap-4">
-        <!-- Animated Robot Icon -->
-        <div class="flex-shrink-0">
-          <div class="w-16 h-16 rounded-full bg-[#10b981]/20 flex items-center justify-center animate-bounce-slow">
-            <svg class="w-10 h-10 text-[#10b981] animate-pulse" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-            </svg>
+    <!-- Timeline Container -->
+    <div class="relative space-y-24 md:space-y-32" id="timeline-container">
+      <!-- Central Line Base (Gris/Claro) -->
+      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-2 bg-gray-200 dark:bg-white/5 rounded-full -translate-x-1/2 overflow-hidden">
+         <!-- Scroll Progress Line -->
+         <div id="scroll-line-progress" class="absolute top-0 left-0 w-full bg-gradient-to-b from-emerald-400 to-emerald-600 rounded-full origin-top transform scale-y-0 h-full"></div>
+      </div>
+
+      {projects.map((project, index) => {
+        const isEven = index % 2 === 0;
+        const isHidden = index >= INITIAL_VISIBLE;
+        return (
+          <div 
+            class={`project-card flex flex-col md:flex-row gap-8 md:gap-16 items-center relative z-10 
+              ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}
+              ${isHidden ? 'hidden-project hidden' : 'opacity-0 translate-y-16'}
+            `}
+            data-index={index}
+            data-category={project.category}
+          >
+            <!-- Timeline Node -->
+            <div class="timeline-node hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white dark:bg-[#050810] border-[4px] border-gray-300 dark:border-gray-700 z-20 shadow-md transition-colors duration-300"></div>
+
+            <!-- Image Side -->
+            <a href={`/project/${project.id}`} class="w-full md:w-1/2 group block relative rounded-[2rem] overflow-hidden bg-white dark:bg-transparent dark:glass-dark border-[3px] border-gray-100 dark:border-white/5 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:-translate-y-2 transition-all duration-300 shadow-xl dark:shadow-none mt-4 md:mt-0">
+              <div class="relative h-[280px] md:h-[400px] overflow-hidden w-full">
+                <!-- Overlay Hover -->
+                <div class="absolute inset-0 bg-emerald-500/10 dark:bg-emerald-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+                
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  onerror={`this.src='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Crect fill="%23111" width="800" height="600"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="30" fill="%2310b981"%3E${project.title}%3C/text%3E%3C/svg%3E'`}
+                  loading="lazy"
+                />
+                
+                <!-- View Details Banner -->
+                <div class="absolute bottom-6 left-0 right-0 flex justify-center translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-20">
+                  <span class="inline-flex items-center gap-2 text-white font-bold bg-gray-900 dark:bg-emerald-600 shadow-xl px-6 py-3 rounded-full">
+                    Analizar Detalle <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Content Side -->
+            <div class={`w-full md:w-1/2 flex flex-col ${isEven ? 'md:items-start md:text-left' : 'md:items-start md:text-left'} text-center md:text-left`}>
+              <div class="text-emerald-500 dark:text-emerald-400 text-sm font-bold mb-3 tracking-wider uppercase bg-emerald-50 dark:bg-emerald-500/10 inline-block px-3 py-1 rounded-full mx-auto md:mx-0">
+                {project.subtitle}
+              </div>
+              
+              <h3 class="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900 dark:text-white hover:text-emerald-500 transition-colors cursor-pointer" style="font-family: var(--font-heading);">
+                <a href={`/project/${project.id}`}>{project.title}</a>
+              </h3>
+
+              <div class="flex items-center justify-center md:justify-start gap-2 mb-6 text-sm text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-100 dark:bg-emerald-500/10 px-5 py-2.5 rounded-[1rem] inline-flex w-fit mx-auto md:mx-0 border-b-[3px] border-emerald-200 dark:border-emerald-500/20" style="font-family: var(--font-main);">
+                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                <span>{project.impact}</span>
+              </div>
+
+              <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed font-medium" style="font-family: var(--font-main);">
+                {project.description}
+              </p>
+
+              <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+                {project.tags.map((tag) => (
+                  <span class="px-4 py-2 bg-gray-100 border border-gray-200 dark:bg-white/5 text-gray-700 dark:text-gray-300 font-semibold text-sm rounded-[1rem] dark:border-white/10" style="font-family: var(--font-main);">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        );
+      })}
+    </div>
 
-        <!-- Message Content -->
-        <div class="flex-1">
-          <h4 class="text-white font-bold mb-2 text-lg" style="font-family: var(--font-main);">
-            Proyecto Local
-          </h4>
-          <p id="toast-message" class="text-gray-300 text-sm leading-relaxed typing-animation" style="font-family: var(--font-main);">
-          </p>
-        </div>
-
-        <!-- Close Button -->
-        <button id="toast-close" class="flex-shrink-0 text-gray-400 hover:text-white transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+    <!-- Pagination Button -->
+    {projects.length > INITIAL_VISIBLE && (
+      <div class="mt-24 text-center pb-12" id="view-more-container">
+        <button id="view-more-btn" class="group inline-flex items-center gap-3 px-8 py-5 bg-white xl:bg-opacity-100 dark:bg-[#111] dark:border-gray-700 text-gray-900 dark:text-white font-extrabold text-lg rounded-[2rem] border-2 border-gray-200 border-b-[6px] hover:border-b-[3px] hover:translate-y-[3px] active:border-b-[2px] active:translate-y-[4px] transition-all duration-150 shadow-sm" style="font-family: var(--font-main);">
+          Ver Todos los Proyectos
+          <svg class="w-6 h-6 text-emerald-500 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/></svg>
         </button>
       </div>
-
-      <!-- Progress Bar -->
-      <div class="h-1 bg-gray-700">
-        <div id="toast-progress" class="h-full bg-[#10b981] transition-all duration-[5000ms] ease-linear w-0"></div>
-      </div>
-    </div>
+    )}
   </div>
 </section>
 
-<style>
-  @keyframes bounce-slow {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
-  }
-
-  @keyframes typing-cursor {
-    0%, 100% {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #10b981;
-    }
-  }
-
-  .typing-animation {
-    border-right: 2px solid #10b981;
-    animation: typing-cursor 0.75s step-end infinite;
-  }
-</style>
-
 <script>
-  const demoButtons = document.querySelectorAll('.demo-button');
-  const toast = document.getElementById('toast-notification');
-  const toastMessage = document.getElementById('toast-message');
-  const toastClose = document.getElementById('toast-close');
-  const toastProgress = document.getElementById('toast-progress');
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-  const message = "Este proyecto está ejecutándose de modo local en el cliente. No se puede visualizar en línea, pero está completamente funcional en entornos de desarrollo locales.";
+  gsap.registerPlugin(ScrollTrigger);
 
-  let toastTimeout: number | undefined;
-  let progressTimeout: number | undefined;
-
-  function showToast(projectName: string) {
-    if (toastMessage && toast && toastProgress) {
-      // Reset message
-      toastMessage.textContent = '';
-
-      // Show toast
-      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
-      toast.classList.add('opacity-100', 'translate-x-0');
-
-      // Type message
-      let charIndex = 0;
-      function typeMessage() {
-        if (charIndex < message.length) {
-          toastMessage!.textContent += message[charIndex];
-          charIndex++;
-          setTimeout(typeMessage, 20);
-        }
-      }
-      setTimeout(typeMessage, 300);
-
-      // Start progress bar
-      setTimeout(() => {
-        toastProgress!.classList.remove('w-0');
-        toastProgress!.classList.add('w-full');
-      }, 100);
-
-      // Auto hide after 5 seconds
-      if (toastTimeout) clearTimeout(toastTimeout);
-      toastTimeout = window.setTimeout(hideToast, 5000);
-    }
-  }
-
-  function hideToast() {
-    if (toast && toastProgress) {
-      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
-      toast.classList.remove('opacity-100', 'translate-x-0');
-
-      // Reset progress
-      setTimeout(() => {
-        toastProgress!.classList.remove('w-full');
-        toastProgress!.classList.add('w-0');
-      }, 500);
-    }
-  }
-
-  // Add click handlers to demo buttons
-  demoButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      const projectName = (button as HTMLElement).dataset.project || '';
-      showToast(projectName);
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Header reveal (Springy bounce)
+    gsap.to('.projects-header', {
+      scrollTrigger: {
+        trigger: '#projects',
+        start: 'top 80%',
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: 'back.out(1.7)'
     });
-  });
 
-  // Close button
-  toastClose?.addEventListener('click', () => {
-    if (toastTimeout) clearTimeout(toastTimeout);
-    hideToast();
+    gsap.to('.project-filters', {
+      scrollTrigger: {
+        trigger: '#projects',
+        start: 'top 80%',
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      delay: 0.2,
+      ease: 'back.out(1.7)'
+    });
+
+    // 2. Timeline Dynamic Line Fill
+    const timelineContainer = document.getElementById('timeline-container');
+    const scrollLine = document.getElementById('scroll-line-progress');
+    
+    if (timelineContainer && scrollLine) {
+      gsap.to(scrollLine, {
+        scrollTrigger: {
+          trigger: timelineContainer,
+          start: 'top 50%',
+          end: 'bottom 50%',
+          scrub: 0.5
+        },
+        scaleY: 1,
+        ease: "none"
+      });
+
+      // Lighting up nodes efficiently without layout thrashing
+      document.querySelectorAll('.timeline-node').forEach((node) => {
+        const nodeElement = node as HTMLElement;
+        ScrollTrigger.create({
+          trigger: nodeElement,
+          start: 'top 50%',
+          onEnter: () => {
+            nodeElement.classList.add('active-node', 'border-emerald-500');
+            nodeElement.classList.remove('border-gray-300', 'dark:border-gray-700');
+            gsap.fromTo(nodeElement, { scale: 0.8 }, { scale: 1.3, ease: "back.out(3)", duration: 0.5 });
+          },
+          onLeaveBack: () => {
+            nodeElement.classList.remove('active-node', 'border-emerald-500');
+            nodeElement.classList.add('border-gray-300', 'dark:border-gray-700');
+            gsap.to(nodeElement, { scale: 1, duration: 0.3 });
+          }
+        });
+      });
+    }
+
+    // 3. Filter Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const allCards = document.querySelectorAll('.project-card');
+    const viewMoreContainer = document.getElementById('view-more-container');
+    let hasClickedViewMore = false;
+
+    const setBtnActive = (btn: Element) => {
+      filterBtns.forEach(b => {
+        b.classList.remove('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-500/10', 'text-emerald-600', 'dark:text-emerald-400');
+        b.classList.add('border-transparent', 'bg-white', 'dark:bg-white/5', 'text-gray-600', 'dark:text-gray-300');
+      });
+      btn.classList.add('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-500/10', 'text-emerald-600', 'dark:text-emerald-400');
+      btn.classList.remove('border-transparent', 'bg-white', 'dark:bg-white/5', 'text-gray-600', 'dark:text-gray-300');
+    };
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setBtnActive(btn);
+        const category = btn.getAttribute('data-category');
+        let visibleCount = 0;
+
+        allCards.forEach(card => {
+          const cardEl = card as HTMLElement;
+          const cardCategory = cardEl.getAttribute('data-category');
+          
+          if (category === 'Todos' || cardCategory === category) {
+            // Respect INITIAL_VISIBLE if 'Todos' and View More hasn't been clicked
+            if (category === 'Todos' && !hasClickedViewMore && visibleCount >= 4) {
+              cardEl.classList.add('hidden', 'hidden-project');
+            } else {
+              cardEl.classList.remove('hidden', 'hidden-project');
+              gsap.fromTo(cardEl, 
+                { opacity: 0, y: 30, scale: 0.95 }, 
+                { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'back.out(1.2)' }
+              );
+            }
+            visibleCount++;
+          } else {
+            cardEl.classList.add('hidden');
+          }
+        });
+
+        if (viewMoreContainer) {
+          if (category === 'Todos' && !hasClickedViewMore && visibleCount >= 4) {
+            viewMoreContainer.style.display = 'block';
+          } else {
+            viewMoreContainer.style.display = 'none';
+          }
+        }
+
+        setTimeout(() => ScrollTrigger.refresh(), 100);
+      });
+    });
+
+    // 4. Initial Cards Reveal
+    const visibleCards = document.querySelectorAll('.project-card:not(.hidden)');
+    visibleCards.forEach((card) => {
+      gsap.to(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'back.out(1.5)',
+      });
+    });
+
+    // 5. View More Logic
+    const viewMoreBtn = document.getElementById('view-more-btn');
+    if (viewMoreBtn && viewMoreContainer) {
+      viewMoreBtn.addEventListener('click', () => {
+        hasClickedViewMore = true;
+        const hiddenCards = document.querySelectorAll('.hidden-project');
+        
+        hiddenCards.forEach((card, index) => {
+          card.classList.remove('hidden', 'hidden-project');
+          gsap.set(card, { opacity: 0, y: 50, scale: 0.95 });
+          gsap.to(card, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.2,
+            ease: 'back.out(1.5)',
+            delay: index * 0.15 
+          });
+        });
+
+        gsap.to(viewMoreContainer, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.5,
+          onComplete: () => {
+             viewMoreContainer.style.display = 'none';
+             viewMoreContainer.style.opacity = '1';
+             viewMoreContainer.style.scale = '1';
+          }
+        });
+        
+        setTimeout(() => ScrollTrigger.refresh(), 100);
+      });
+    }
   });
 </script>

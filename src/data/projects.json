@@ -1,0 +1,223 @@
+[
+  {
+    "id": "votape",
+    "title": "VotaPE",
+    "subtitle": "Transparencia Electoral",
+    "description": "La herramienta definitiva para la transparencia política, comparación de candidatos e información veraz.",
+    "longDescription": "Descubre VotaPE, la herramienta definitiva para la transparencia política creada en conjunto con Codehive Labs. Esta aplicación permite acceder a información veraz, comparar candidatos, leer planes de gobierno y tomar las mejores decisiones en las próximas elecciones. Cuenta con un innovador sistema multimedia para escuchar propuestas directamente.",
+    "problem": "La falta de acceso centralizado a información clara y transparente sobre los candidatos políticos dificulta que la ciudadanía tome decisiones informadas, propiciando la desinformación electoral.",
+    "solution": "Una plataforma digital unificada que concentra planes de gobierno, comparación directa de perfiles de candidatos, noticias en tiempo real y hasta reproductores de audio para los discursos oficiales.",
+    "scope": "Se diseñó y lanzó al público general una aplicación amigable y escalable para uso ciudadano intenso durante los meses clave de campañas políticas.",
+    "impact": "Fomento masivo del voto informado",
+    "tags": [
+      "React",
+      "UI/UX",
+      "Mobile"
+    ],
+    "image": "/images/projects/votape.webp",
+    "gallery": [
+      {
+        "type": "image",
+        "url": "/images/projects/votape.webp"
+      }
+    ],
+    "demoLink": "https://codehive-labs.pages.dev/votape",
+    "features": [
+      "Información Política Transparente",
+      "Comparación de Candidatos",
+      "Planes de Gobierno Detallados",
+      "Noticias Electorales en Tiempo Real"
+    ],
+    "category": "Innovación & Social"
+  },
+  {
+    "id": "eureka",
+    "title": "Eureka",
+    "subtitle": "Ganador de Hackathon",
+    "description": "Repositorio de ideas que incentiva a estudiantes y profesionales a mostrar sus proyectos e innovaciones.",
+    "longDescription": "Una plataforma integral diseñada durante un hackathon competitivo. Eureka permite a los innovadores documentar, compartir y buscar feedback sobre sus proyectos. Integra un sistema robusto de búsqueda, categorización por tecnologías y perfiles de usuario. Demuestra la capacidad de desarrollar un producto atractivo y funcional bajo intensa presión de tiempo.",
+    "problem": "La falta de un espacio centralizado y estructurado impedía que estudiantes y profesionales pudieran dar visibilidad a sus prototipos y recibir retroalimentación temprana del mercado.",
+    "solution": "Se desarrolló una plataforma web interactiva con un motor de búsqueda avanzado, permitiendo el registro y documentación sistemática de cada iniciativa, facilitando conexiones clave.",
+    "scope": "El proyecto fue ideado, desarrollado y desplegado en un lapso récord, logrando validar el modelo de usabilidad y conectar a más de 50 perfiles en la primera etapa.",
+    "impact": "Mejora en visibilidad de proyectos del 45%",
+    "tags": [
+      "React",
+      "Node.js",
+      "MySQL"
+    ],
+    "image": "/images/projects/eureka.webp",
+    "gallery": [
+      {
+        "type": "image",
+        "url": "/images/projects/eureka.webp"
+      },
+      {
+        "type": "video",
+        "url": "https://youtu.be/7-AVOw8ghEk"
+      }
+    ],
+    "demoLink": "https://eureka-app-pi.vercel.app/",
+    "features": [
+      "Gestión de Portafolio",
+      "Búsqueda semántica",
+      "Perfiles de usuario",
+      "Sistema de feedback"
+    ],
+    "category": "Innovación & Social"
+  },
+  {
+    "id": "gestion-herramientas",
+    "title": "Gestión de Herramientas",
+    "subtitle": "Industria Manufacturera",
+    "description": "Sistema web para la gestión y trazabilidad de herramientas y dispositivos de bloqueo.",
+    "longDescription": "Sistema escalable diseñado específicamente para el sector manufacturero pesado. Resuelve el problema crítico de la pérdida de herramientas y falta de trazabilidad en los procesos de mantenimiento (LOTO). Incluye gestión de estados de mantenimiento, inventario en tiempo real y préstamo rápido.",
+    "problem": "La planta experimentaba pérdidas financieras y retrasos operativos debido al extravío constante de herramientas y la falta de control en los dispositivos de seguridad (LOTO) durante mantenimientos.",
+    "solution": "Arquitecté un sistema de trazabilidad digital con códigos QR y autenticación de roles, enlazando directamente cada herramienta con el responsable temporal y su orden de trabajo.",
+    "scope": "Se digitalizó el inventario completo y el flujo de préstamos diarios, abarcando a más de 100 técnicos de turno y estandarizando el proceso de retorno.",
+    "impact": "Reducción de pérdida de equipos en 90%",
+    "tags": [
+      "React",
+      "FastAPI",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "image": "/images/projects/ToolTrack.webp",
+    "gallery": [
+      {
+        "type": "image",
+        "url": "/images/projects/ToolTrack.webp"
+      }
+    ],
+    "demoLink": "https://tooltrack-utilities.pages.dev/",
+    "features": [
+      "Código de barras/QR",
+      "Roles de administrador y técnico",
+      "Historial de Uso",
+      "Matriz LOTO"
+    ],
+    "category": "Industrial"
+  },
+  {
+    "id": "kpi-realtime",
+    "title": "Lectura KPI en Tiempo Real",
+    "subtitle": "Industria Manufacturera",
+    "description": "Plataforma de monitoreo y análisis de indicadores clave de proceso en tiempo real.",
+    "longDescription": "Dashboard industrial de alto rendimiento encargado de unificar los flujos de datos de sensores PLC e InfluxDB. Permite a los supervisores de planta identificar cuellos de botella instantáneamente y predecir tiempos de inactividad, logrando una vista central y unificada de toda la línea de producción.",
+    "problem": "La recolección de datos de producción tenía un desfase de varias horas, lo que impedía a los supervisores tomar acciones correctivas inmediatas ante caídas de rendimiento.",
+    "solution": "Integración de un flujo de datos de baja latencia vía WebSockets conectado directamente a los PLCs de las máquinas para procesar telemetría industrial en el acto.",
+    "scope": "Despliegue de un centro de control operativo con tableros interactivos a 60FPS que monitorean 5 líneas de producción simultáneas ininterrumpidamente.",
+    "impact": "Disminución de tiempo de reacción a 2s",
+    "tags": [
+      "React",
+      "WebSockets",
+      "InfluxDB",
+      "Grafana"
+    ],
+    "image": "/images/projects/kpi-realtime.webp",
+    "gallery": [
+      {
+        "type": "image",
+        "url": "/images/projects/kpi-realtime.webp"
+      }
+    ],
+    "demoLink": null,
+    "features": [
+      "Dashboard Live 60FPS",
+      "Alertas tempranas",
+      "Exportación de Reportes",
+      "Integración PLC"
+    ],
+    "category": "Industrial"
+  },
+  {
+    "id": "copiloto-ia",
+    "title": "Sistema Copiloto IA",
+    "subtitle": "IA Industrial",
+    "description": "Copiloto inteligente que indica decisiones oportunas ante desvíos o fallas de producción.",
+    "longDescription": "Solución basada en Machine Learning y LLMs especializados en industria. Este copiloto se integra en las tabletas de los técnicos para ofrecer recomendaciones predictivas y manuales de procedimiento instantáneos cuando las máquinas detectan anomalías, actuando como un ingeniero senior virtual.",
+    "problem": "Ante una falla inusual, los técnicos demoraban excesivo tiempo buscando en manuales de cientos de páginas, alargando los periodos de máquina detenida.",
+    "solution": "Creación de un motor IA (RAG) alimentado con la documentación técnica histórica, capaz de responder consultas en lenguaje natural y diagnosticar basados en los códigos de error.",
+    "scope": "Implementación en 20 tablets industriales, reduciendo la curva de aprendizaje de los técnicos junior y centralizando el conocimiento técnico acumulado de la planta.",
+    "impact": "Aumento de eficiencia OEE en 15%",
+    "tags": [
+      "Next.js",
+      "Python",
+      "OpenAI"
+    ],
+    "image": "/images/projects/copiloto.webp",
+    "gallery": [
+      {
+        "type": "image",
+        "url": "/images/projects/copiloto.webp"
+      }
+    ],
+    "demoLink": null,
+    "features": [
+      "RAG con Manuales Industriales",
+      "Reconocimiento de fallas",
+      "Modelo predictivo Python"
+    ],
+    "category": "Industrial"
+  },
+  {
+    "id": "asistente-medico",
+    "title": "Asistente Médico con IA",
+    "subtitle": "Salud Digital",
+    "description": "Plataforma que conecta doctores y pacientes con soporte inteligente para diagnóstico.",
+    "longDescription": "Asistente virtual de triaje médico que recolecta pre-diagnósticos de pacientes a través de un chat natural impulsado por IA. Filtra la severidad e historiales para que, cuando el doctor tome el caso, tenga un análisis preliminar preciso, optimizando el tiempo y reduciendo demoras en urgencias.",
+    "problem": "Las salas de espera saturadas y el escaso tiempo de consulta causaban que los médicos no tuvieran un resumen claro del padecimiento antes de ver al paciente.",
+    "solution": "Desarrollo de un agente conversacional empático y clínico que realiza una anamnesis previa, entregando al especialista un reporte estructurado y priorizado por severidad.",
+    "scope": "Prototipo funcional validado para clínicas ambulatorias, enfocándose en la confidencialidad de datos y la fluidez de interacción con usuarios no técnicos.",
+    "impact": "Optimización de flujo de atención hospitalaria",
+    "tags": [
+      "Next.js",
+      "Python",
+      "OpenAI"
+    ],
+    "image": "/images/projects/asistente-medico.webp",
+    "gallery": [
+      {
+        "type": "image",
+        "url": "/images/projects/asistente-medico.webp"
+      }
+    ],
+    "demoLink": null,
+    "features": [
+      "Chatbot Médico Conversacional",
+      "Historial Clínico Seguro",
+      "Generación de Resumen Médico"
+    ],
+    "category": "Salud Digital"
+  },
+  {
+    "id": "ecomodulator",
+    "title": "EcoModulator",
+    "subtitle": "Industria Manufacturera",
+    "description": "Aplicación mobile y web para monitoreo ambiental y optimización de eficiencia energética.",
+    "longDescription": "Solución integral que combina recolección de datos desde nodos IoT distribuidos en planta para medir calidad del aire, ruido corporal y consumo energético. La aplicación sugiere regulaciones en los sistemas de HVAC y maquinaria principal para reducir la huella de carbono diaria de forma automática.",
+    "problem": "La falta de medición de parámetros ambientales resultaba en un gasto energético excesivo e innecesario durante horas valle o zonas desocupadas.",
+    "solution": "Un sistema integral (dashboard + app móvil) que cruza datos IoT en la nube para identificar patrones de desperdicio energético y enviar alertas preventivas.",
+    "scope": "Instalación de la arquitectura base lista para integrarse a ecosistemas IoT, promoviendo certificaciones de sostenibilidad corporativa.",
+    "impact": "Ahorro energético estimado del 30%",
+    "tags": [
+      "IoT",
+      "Machine Learning",
+      "Cloud",
+      "React Native"
+    ],
+    "image": "/images/projects/T-minus.webp",
+    "gallery": [
+      {
+        "type": "image",
+        "url": "/images/projects/T-minus.webp"
+      }
+    ],
+    "demoLink": null,
+    "features": [
+      "Monitoreo energético",
+      "Trazabilidad de carbono",
+      "Visualización espacial de temperatura"
+    ],
+    "category": "Industrial"
+  }
+]

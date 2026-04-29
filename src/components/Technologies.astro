@@ -1,94 +1,141 @@
 ---
-const techCategories = [
-  {
-    name: 'Frontend',
-    technologies: [
-      { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-      { name: 'React Native', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-      { name: 'Tailwind', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-      { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' }
-    ]
-  },
-  {
-    name: 'Backend',
-    technologies: [
-      { name: 'Spring Boot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
-      { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-      { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-      { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' }
-    ]
-  },
-  {
-    name: 'Bases de Datos',
-    technologies: [
-      { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-      { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-      { name: 'Redis', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
-      { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-      { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-      { name: 'InfluxDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/influxdb/influxdb-original.svg' }
-    ]
-  },
-  {
-    name: 'IA & Machine Learning',
-    technologies: [
-      { name: 'OpenCV', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
-      { name: 'TensorFlow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' }
-    ]
-  }
+const technologies = [
+  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+  { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+  { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+  { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
+  { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+  { name: 'GraphQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg' },
+  { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
+  { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+  { name: 'Tailwind', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+  { name: 'TensorFlow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg' }
 ];
+
+// Duplicate for smooth infinite scrolling
+const marqueeTechs = [...technologies, ...technologies];
 ---
 
-<section id="technologies" class="py-20 px-4">
-  <div class="max-w-7xl mx-auto">
-    <!-- Header -->
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#10b981]" style="font-family: var(--font-main);">
+<section id="technologies" class="py-24 bg-gray-50 dark:bg-black border-y border-gray-200 dark:border-white/10 overflow-hidden relative">
+
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="text-center mb-16 tech-header opacity-0 translate-y-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900 dark:text-white" style="font-family: var(--font-heading);">
         Stack Tecnológico
       </h2>
-      <p class="text-gray-400 text-lg" style="font-family: var(--font-main);">
-        Herramientas que domino para crear soluciones completas
+      <p class="text-gray-600 dark:text-gray-400 text-lg" style="font-family: var(--font-main);">
+        Dominio de herramientas modernas para construir software robusto y escalable.
       </p>
     </div>
+  </div>
 
-    <!-- Tech Categories -->
-    <div class="space-y-16">
-      {techCategories.map((category) => (
-        <div>
-          <!-- Category Title (without box) -->
-          <h3 class="text-2xl font-bold text-center mb-8 text-gray-300" style="font-family: var(--font-handwriting);">
-            {category.name}
-          </h3>
+  <!-- Marquee Container -->
+  <div class="relative w-full z-10 flex flex-col gap-6 opacity-0 tech-marquee-container translate-y-12 mt-10">
 
-          <!-- Technologies Grid -->
-          <div class="flex flex-wrap justify-center gap-8">
-            {category.technologies.map((tech) => (
-              <div class="tech-item group flex flex-col items-center gap-3 cursor-pointer">
-                <div class="relative w-12 h-12">
-                  <img
-                    src={tech.logo}
-                    alt={tech.name}
-                    class="w-full h-full object-contain transition-all duration-300 group-hover:scale-150 group-hover:drop-shadow-[0_0_15px_rgba(16,185,129,0.6)]"
-                    loading="lazy"
-                  />
-                </div>
-                <span
-                  class="text-xs text-gray-400 transition-all duration-300 group-hover:text-[#10b981] group-hover:scale-110"
-                  style="font-family: var(--font-main); text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);"
-                >
-                  {tech.name}
-                </span>
-              </div>
-            ))}
+    <!-- Track 1 (Left) -->
+    <div class="flex marquee-track">
+      <div class="flex animate-marquee whitespace-nowrap gap-6 shrink-0 px-3">
+        {marqueeTechs.map((tech) => (
+          <div class="flex items-center gap-4 px-6 py-4 bg-white dark:bg-[#0a0a0a] rounded-xl border border-gray-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all cursor-default shadow-sm">
+            <img src={tech.logo} alt={tech.name} class="w-10 h-10 object-contain drop-shadow-sm" loading="lazy" />
+            <span class="text-gray-900 dark:text-gray-100 font-bold text-lg" style="font-family: var(--font-heading);">{tech.name}</span>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <!-- Duplicate the exact same to fill the gap safely -->
+      <div class="flex animate-marquee whitespace-nowrap gap-6 shrink-0 px-3" aria-hidden="true">
+        {marqueeTechs.map((tech) => (
+          <div class="flex items-center gap-4 px-6 py-4 bg-white dark:bg-[#0a0a0a] rounded-xl border border-gray-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all cursor-default shadow-sm">
+            <img src={tech.logo} alt={tech.name} class="w-10 h-10 object-contain drop-shadow-sm" loading="lazy" />
+            <span class="text-gray-900 dark:text-gray-100 font-bold text-lg" style="font-family: var(--font-heading);">{tech.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Track 2 (Right / Reverse) -->
+    <div class="flex marquee-track">
+      <div class="flex animate-marquee-reverse whitespace-nowrap gap-6 shrink-0 px-3">
+        {marqueeTechs.reverse().map((tech) => (
+          <div class="flex items-center gap-4 px-6 py-4 bg-white dark:bg-[#0a0a0a] rounded-xl border border-gray-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all cursor-default shadow-sm">
+            <img src={tech.logo} alt={tech.name} class="w-10 h-10 object-contain drop-shadow-sm" loading="lazy" />
+            <span class="text-gray-900 dark:text-gray-100 font-bold text-lg" style="font-family: var(--font-heading);">{tech.name}</span>
+          </div>
+        ))}
+      </div>
+      <div class="flex animate-marquee-reverse whitespace-nowrap gap-6 shrink-0 px-3" aria-hidden="true">
+        {marqueeTechs.map((tech) => (
+          <div class={`flex items-center gap-4 px-6 py-4 glass dark:glass-dark bg-white/70 dark:bg-transparent rounded-2xl border ${tech.border} hover:bg-gray-100 dark:hover:bg-white/5 transition-colors cursor-default shadow-sm dark:shadow-none`}>
+            <img src={tech.logo} alt={tech.name} class="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
+            <span class="text-gray-800 dark:text-gray-300 font-medium text-lg" style="font-family: var(--font-heading);">{tech.name}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .tech-item:hover img {
-    filter: drop-shadow(0 0 15px rgba(187, 195, 193, 0.6));
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse 35s linear infinite;
+  }
+
+  /* Pause on hover for better UX */
+  .marquee-track:hover .animate-marquee,
+  .marquee-track:hover .animate-marquee-reverse {
+    animation-play-state: paused;
   }
 </style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.to('.tech-header', {
+      scrollTrigger: {
+        trigger: '#technologies',
+        start: 'top 85%',
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    gsap.to('.tech-marquee-container', {
+      scrollTrigger: {
+        trigger: '#technologies',
+        start: 'top 75%',
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: 'power3.out'
+    });
+  });
+</script>
