@@ -1,80 +1,14 @@
 [
   {
-    "id": "votape",
-    "title": "VotaPE",
-    "subtitle": "Transparencia Electoral",
-    "description": "La herramienta definitiva para la transparencia política, comparación de candidatos e información veraz.",
-    "longDescription": "Descubre VotaPE, la herramienta definitiva para la transparencia política creada en conjunto con Codehive Labs. Esta aplicación permite acceder a información veraz, comparar candidatos, leer planes de gobierno y tomar las mejores decisiones en las próximas elecciones. Cuenta con un innovador sistema multimedia para escuchar propuestas directamente.",
-    "problem": "La falta de acceso centralizado a información clara y transparente sobre los candidatos políticos dificulta que la ciudadanía tome decisiones informadas, propiciando la desinformación electoral.",
-    "solution": "Una plataforma digital unificada que concentra planes de gobierno, comparación directa de perfiles de candidatos, noticias en tiempo real y hasta reproductores de audio para los discursos oficiales.",
-    "scope": "Se diseñó y lanzó al público general una aplicación amigable y escalable para uso ciudadano intenso durante los meses clave de campañas políticas.",
-    "impact": "Fomento masivo del voto informado",
-    "tags": [
-      "React",
-      "UI/UX",
-      "Mobile"
-    ],
-    "image": "/images/projects/votape.webp",
-    "gallery": [
-      {
-        "type": "image",
-        "url": "/images/projects/votape.webp"
-      }
-    ],
-    "demoLink": "https://codehive-labs.pages.dev/votape",
-    "features": [
-      "Información Política Transparente",
-      "Comparación de Candidatos",
-      "Planes de Gobierno Detallados",
-      "Noticias Electorales en Tiempo Real"
-    ],
-    "category": "Innovación & Social"
-  },
-  {
-    "id": "eureka",
-    "title": "Eureka",
-    "subtitle": "Ganador de Hackathon",
-    "description": "Repositorio de ideas que incentiva a estudiantes y profesionales a mostrar sus proyectos e innovaciones.",
-    "longDescription": "Una plataforma integral diseñada durante un hackathon competitivo. Eureka permite a los innovadores documentar, compartir y buscar feedback sobre sus proyectos. Integra un sistema robusto de búsqueda, categorización por tecnologías y perfiles de usuario. Demuestra la capacidad de desarrollar un producto atractivo y funcional bajo intensa presión de tiempo.",
-    "problem": "La falta de un espacio centralizado y estructurado impedía que estudiantes y profesionales pudieran dar visibilidad a sus prototipos y recibir retroalimentación temprana del mercado.",
-    "solution": "Se desarrolló una plataforma web interactiva con un motor de búsqueda avanzado, permitiendo el registro y documentación sistemática de cada iniciativa, facilitando conexiones clave.",
-    "scope": "El proyecto fue ideado, desarrollado y desplegado en un lapso récord, logrando validar el modelo de usabilidad y conectar a más de 50 perfiles en la primera etapa.",
-    "impact": "Mejora en visibilidad de proyectos del 45%",
-    "tags": [
-      "React",
-      "Node.js",
-      "MySQL"
-    ],
-    "image": "/images/projects/eureka.webp",
-    "gallery": [
-      {
-        "type": "image",
-        "url": "/images/projects/eureka.webp"
-      },
-      {
-        "type": "video",
-        "url": "https://youtu.be/7-AVOw8ghEk"
-      }
-    ],
-    "demoLink": "https://eureka-app-pi.vercel.app/",
-    "features": [
-      "Gestión de Portafolio",
-      "Búsqueda semántica",
-      "Perfiles de usuario",
-      "Sistema de feedback"
-    ],
-    "category": "Innovación & Social"
-  },
-  {
-    "id": "gestion-herramientas",
-    "title": "Gestión de Herramientas",
-    "subtitle": "Industria Manufacturera",
-    "description": "Sistema web para la gestión y trazabilidad de herramientas y dispositivos de bloqueo.",
-    "longDescription": "Sistema escalable diseñado específicamente para el sector manufacturero pesado. Resuelve el problema crítico de la pérdida de herramientas y falta de trazabilidad en los procesos de mantenimiento (LOTO). Incluye gestión de estados de mantenimiento, inventario en tiempo real y préstamo rápido.",
-    "problem": "La planta experimentaba pérdidas financieras y retrasos operativos debido al extravío constante de herramientas y la falta de control en los dispositivos de seguridad (LOTO) durante mantenimientos.",
-    "solution": "Arquitecté un sistema de trazabilidad digital con códigos QR y autenticación de roles, enlazando directamente cada herramienta con el responsable temporal y su orden de trabajo.",
-    "scope": "Se digitalizó el inventario completo y el flujo de préstamos diarios, abarcando a más de 100 técnicos de turno y estandarizando el proceso de retorno.",
-    "impact": "Reducción de pérdida de equipos en 90%",
+    "id": "tooltrack",
+    "title": "ToolTrack",
+    "subtitle": "SaaS para Talleres de Mantenimiento",
+    "description": "SaaS integral para la gestión de talleres, trazabilidad de herramientas, y checklist de inspecciones de seguridad (EPPs, izaje).",
+    "longDescription": "ToolTrack es una plataforma SaaS diseñada específicamente para revolucionar la gestión de talleres de mantenimiento industrial. Centraliza y digitaliza los checklists, la inspección de herramientas, dispositivos de izaje y EPPs. Garantiza no solo la mejora de la productividad y trazabilidad del inventario, sino que además asegura un entorno de trabajo con los más altos estándares de seguridad operativa.",
+    "problem": "El descontrol en los talleres de mantenimiento generaba altos costos por pérdida de herramientas y riesgos de seguridad severos al no llevar un control adecuado de las inspecciones de EPPs y equipos de izaje.",
+    "solution": "Un SaaS que administra el flujo diario de herramientas mediante códigos QR y roles, obligando a verificaciones de seguridad automatizadas para garantizar que cada operario trabaje de forma segura.",
+    "scope": "Digitalización del inventario y del ciclo de vida de las herramientas en planta, impactando a cientos de técnicos y estandarizando la cultura de seguridad industrial.",
+    "impact": "Alta productividad y trabajo 100% seguro",
     "tags": [
       "React",
       "FastAPI",
@@ -131,14 +65,14 @@
   },
   {
     "id": "copiloto-ia",
-    "title": "Sistema Copiloto IA",
-    "subtitle": "IA Industrial",
-    "description": "Copiloto inteligente que indica decisiones oportunas ante desvíos o fallas de producción.",
-    "longDescription": "Solución basada en Machine Learning y LLMs especializados en industria. Este copiloto se integra en las tabletas de los técnicos para ofrecer recomendaciones predictivas y manuales de procedimiento instantáneos cuando las máquinas detectan anomalías, actuando como un ingeniero senior virtual.",
-    "problem": "Ante una falla inusual, los técnicos demoraban excesivo tiempo buscando en manuales de cientos de páginas, alargando los periodos de máquina detenida.",
-    "solution": "Creación de un motor IA (RAG) alimentado con la documentación técnica histórica, capaz de responder consultas en lenguaje natural y diagnosticar basados en los códigos de error.",
-    "scope": "Implementación en 20 tablets industriales, reduciendo la curva de aprendizaje de los técnicos junior y centralizando el conocimiento técnico acumulado de la planta.",
-    "impact": "Aumento de eficiencia OEE en 15%",
+    "title": "Copiloto Industrial AI",
+    "subtitle": "Resolución de Problemas (5 Porqués)",
+    "description": "Agente IA que facilita la toma de decisiones en planta y el análisis de causa raíz utilizando la metodología de los 5 Porqués.",
+    "longDescription": "Copiloto inteligente diseñado para asistir en la toma de decisiones y facilitar la resolución de problemas en el piso de planta. El sistema ingiere el contexto del proceso y aplica un análisis previo para sugerir una posible causa raíz usando la metodología de los 5 Porqués. El usuario colabora editando el análisis junto con la IA para encontrar la verdadera causa raíz, aplicando medidas preventivas para que el fallo no vuelva a suceder.",
+    "problem": "Ante una falla de producción, los diagnósticos eran superficiales y manuales. Esto causaba recurrencia de los mismos incidentes debido a que no se mitigaba la verdadera causa raíz del problema.",
+    "solution": "Integración de un motor IA (RAG/LLM) que sugiere hipótesis de fallas basadas en contexto industrial en tiempo real, empoderando al usuario a iterar mediante los 5 Porqués hasta hallar la solución definitiva.",
+    "scope": "Despliegue operativo asistiendo a técnicos y supervisores, consolidando el conocimiento y asegurando que las lecciones aprendidas formen parte del estándar del proceso operativo.",
+    "impact": "Eliminación de fallas recurrentes",
     "tags": [
       "Next.js",
       "Python",
@@ -158,36 +92,6 @@
       "Modelo predictivo Python"
     ],
     "category": "Industrial"
-  },
-  {
-    "id": "asistente-medico",
-    "title": "Asistente Médico con IA",
-    "subtitle": "Salud Digital",
-    "description": "Plataforma que conecta doctores y pacientes con soporte inteligente para diagnóstico.",
-    "longDescription": "Asistente virtual de triaje médico que recolecta pre-diagnósticos de pacientes a través de un chat natural impulsado por IA. Filtra la severidad e historiales para que, cuando el doctor tome el caso, tenga un análisis preliminar preciso, optimizando el tiempo y reduciendo demoras en urgencias.",
-    "problem": "Las salas de espera saturadas y el escaso tiempo de consulta causaban que los médicos no tuvieran un resumen claro del padecimiento antes de ver al paciente.",
-    "solution": "Desarrollo de un agente conversacional empático y clínico que realiza una anamnesis previa, entregando al especialista un reporte estructurado y priorizado por severidad.",
-    "scope": "Prototipo funcional validado para clínicas ambulatorias, enfocándose en la confidencialidad de datos y la fluidez de interacción con usuarios no técnicos.",
-    "impact": "Optimización de flujo de atención hospitalaria",
-    "tags": [
-      "Next.js",
-      "Python",
-      "OpenAI"
-    ],
-    "image": "/images/projects/asistente-medico.webp",
-    "gallery": [
-      {
-        "type": "image",
-        "url": "/images/projects/asistente-medico.webp"
-      }
-    ],
-    "demoLink": null,
-    "features": [
-      "Chatbot Médico Conversacional",
-      "Historial Clínico Seguro",
-      "Generación de Resumen Médico"
-    ],
-    "category": "Salud Digital"
   },
   {
     "id": "ecomodulator",

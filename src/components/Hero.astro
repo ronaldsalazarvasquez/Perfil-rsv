@@ -2,7 +2,7 @@
 ---
 
 <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-24 md:pt-20">
-  <!-- Interactive Grid Background -->
+  <!-- Cuadrícula de fondo interactiva -->
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
     <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-emerald-500 opacity-[0.15] blur-[100px]"></div>
@@ -10,7 +10,7 @@
 
   <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
     
-    <!-- Text Content -->
+    <!-- Contenido de texto principal -->
     <div class="flex-1 w-full flex flex-col items-start text-left hero-content">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-sm mb-6 font-medium hero-badge">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -23,7 +23,7 @@
       </h1>
       
       <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl leading-relaxed hero-desc" style="font-family: var(--font-main);">
-        Transformando sistemas industriales y procesos de negocio a través de <strong class="text-emerald-500 dark:text-emerald-400 font-bold">soluciones digitales innovadoras</strong>, análisis de datos e inteligencia artificial.
+        Conecto el piso de planta con la gerencia. De Técnico en Electrotecnia a Ingeniero de Sistemas: construyo <strong class="text-emerald-500 dark:text-emerald-400 font-bold">plataformas SaaS, arquitecturas IoT y agentes de IA</strong> para la Industria 4.0.
       </p>
 
       <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 hero-actions w-full sm:w-auto max-w-sm sm:max-w-none">
@@ -43,9 +43,9 @@
       </div>
     </div>
 
-    <!-- Right Side Abstract/Glass Card -->
+    <!-- Tarjeta visual interactiva (Efecto cristal) -->
     <div class="flex-1 w-full max-w-lg lg:max-w-none relative hero-visuals">
-      <!-- Main Glass Card -->
+      <!-- Contenedor principal de la tarjeta -->
       <div class="glass dark:glass-dark bg-white/70 dark:bg-transparent p-8 rounded-2xl relative z-10 w-full overflow-hidden border border-gray-200 dark:border-emerald-500/20 shadow-xl dark:shadow-none">
         <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-emerald-500/10 dark:from-emerald-500/10 dark:to-transparent opacity-50"></div>
         
@@ -59,7 +59,7 @@
             </div>
           </div>
 
-          <!-- Radar Tooltip -->
+          <!-- Tooltip flotante del gráfico radar -->
           <div id="radar-tooltip" class="absolute pointer-events-none opacity-0 bg-white dark:bg-gray-900 text-gray-900 dark:text-white text-xs font-medium px-3 py-2 rounded-lg shadow-xl border border-gray-200 dark:border-emerald-500/30 w-48 z-50 transition-opacity duration-200" style="font-family: var(--font-main);">
             <div id="radar-tooltip-title" class="font-bold text-emerald-500 dark:text-emerald-400 mb-1 leading-tight"></div>
             <div id="radar-tooltip-desc" class="text-gray-600 dark:text-gray-300 leading-tight"></div>
@@ -67,14 +67,14 @@
 
           <div class="relative w-full aspect-square max-w-[320px] mx-auto svg-radar-container">
             <svg viewBox="-30 -15 260 230" class="w-full h-full text-gray-900 dark:text-white overflow-visible" preserveAspectRatio="xMidYMid meet">
-              <!-- Radial Lines -->
+              <!-- Líneas radiales del gráfico -->
               <line x1="100" y1="100" x2="100" y2="30" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/>
               <line x1="100" y1="100" x2="166.5" y2="78.4" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/>
               <line x1="100" y1="100" x2="141.1" y2="156.6" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/>
               <line x1="100" y1="100" x2="58.9" y2="156.6" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/>
               <line x1="100" y1="100" x2="33.5" y2="78.4" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/>
 
-              <!-- Concentric Pentagons (Grid) -->
+              <!-- Pentágonos concéntricos (Malla) -->
               <!-- Layer 100% -->
               <polygon points="100,30 166.5,78.4 141.1,156.6 58.9,156.6 33.5,78.4" fill="none" stroke="currentColor" stroke-width="1" stroke-opacity="0.1"/>
               <!-- Layer 75% -->
@@ -84,7 +84,7 @@
               <!-- Layer 25% -->
               <polygon points="100,82.5 116.6,94.6 110.2,114.1 89.8,114.1 83.3,94.6" fill="none" stroke="currentColor" stroke-width="1" stroke-opacity="0.1"/>
 
-              <!-- Value Polygon (The Skills) -->
+              <!-- Polígono de valores (Habilidades) -->
               <polygon id="radar-polygon" points="100,37 156.5,81.6 130.8,142.4 60.9,153.7 46.8,82.7" 
                 fill="rgba(16, 185, 129, 0.4)" 
                 stroke="#10b981" 
@@ -93,7 +93,7 @@
                 class="filter drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]"
               />
 
-              <!-- Plot Points and interactive hotzones -->
+              <!-- Puntos de datos y zonas interactivas -->
               <g id="radar-points" fill="#10b981" class="stroke-white dark:stroke-[#111] opacity-90" stroke-width="1.5">
                 <circle cx="100" cy="37" r="3" />
                 <circle cx="156.5" cy="81.6" r="3" />
@@ -102,7 +102,7 @@
                 <circle cx="46.8" cy="82.7" r="3" />
               </g>
 
-              <!-- Interactive Hotzones with Labels -->
+              <!-- Zonas táctiles con etiquetas -->
               <g class="radar-hotzone cursor-pointer" data-title="Mejora Continua" data-desc="Optimización lean y automatización CI/CD de procesos iterativos">
                 <circle cx="100" cy="22" r="15" fill="transparent" />
                 <text x="100" y="22" text-anchor="middle" font-size="9" font-weight="bold" fill="currentColor" opacity="0.9" class="hover:fill-emerald-500 transition-colors">Mejora Continua</text>
@@ -130,7 +130,7 @@
             </svg>
           </div>
 
-        <!-- Decorative Elements -->
+        <!-- Elementos decorativos (Brillos) -->
         <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-full mix-blend-screen filter blur-xl opacity-20 animate-float"></div>
         <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-full mix-blend-screen filter blur-2xl opacity-15 animate-float" style="animation-delay: -2s;"></div>
       </div>
@@ -142,7 +142,7 @@
   import gsap from 'gsap';
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Reveal animations
+    // Secuencia de animación de entrada
     const tl = gsap.timeline({ defaults: { ease: 'back.out(1.5)' } });
 
     tl.fromTo('.hero-badge', 
@@ -180,7 +180,7 @@
       "-=1.0"
     );
 
-    // Subtle floating animations for visuals
+    // Animación flotante continua para la tarjeta
     gsap.to('.hero-visuals', {
       y: -15,
       duration: 3,
@@ -189,7 +189,7 @@
       ease: 'sine.inOut'
     });
 
-    // Tooltip logic
+    // Lógica del Tooltip interactivo
     const tooltip = document.getElementById('radar-tooltip');
     const tooltipTitle = document.getElementById('radar-tooltip-title');
     const tooltipDesc = document.getElementById('radar-tooltip-desc');
@@ -210,7 +210,7 @@
       zone.addEventListener('mousemove', (e) => {
         if (!tooltip) return;
         const mouseEvent = e as MouseEvent;
-        // Position tooltip slightly offset from mouse
+        // Posicionar el tooltip ligeramente desplazado del cursor
         tooltip.style.left = `${mouseEvent.pageX + 15}px`;
         tooltip.style.top = `${mouseEvent.pageY + 15}px`;
       });

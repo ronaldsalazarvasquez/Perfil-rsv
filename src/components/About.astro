@@ -1,29 +1,106 @@
 ---
 ---
 
-<section id="about" class="py-20 px-4">
-  <div class="max-w-4xl mx-auto text-center">
-    <div class="scroll-reveal">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">
-        Sobre <span class="gradient-text">Mí</span>
+<section id="about" class="py-24 bg-white dark:bg-[#0a0a0a] border-y border-gray-100 dark:border-white/5 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
+    <div class="text-center mb-16 about-header opacity-0 translate-y-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900 dark:text-white" style="font-family: var(--font-heading);">
+        Sobre Mí & Trayectoria
       </h2>
-      <div class="h-1 w-20 bg-gradient-to-r from-[#10b981] to-[#0000ff] rounded-full mx-auto mb-8"></div>
+      <p class="text-gray-600 dark:text-gray-400 text-lg" style="font-family: var(--font-main);">
+        Combinando ingeniería de software, análisis de datos y mentalidad industrial.
+      </p>
     </div>
 
-    <div class="space-y-6 text-gray-300 text-lg leading-relaxed scroll-reveal" style="animation-delay: 0.2s;">
-      <p>
-        Soy <span class="text-white font-semibold">Ingeniero de Sistemas e Informática</span>
-        con una pasión genuina por resolver problemas complejos mediante la tecnología.
-        Me especializo en <span class="gradient-text font-semibold">transformación digital</span>,
-        ayudando a empresas a optimizar sus procesos industriales mediante soluciones innovadoras
-        que combinan IoT, inteligencia artificial y análisis de datos en tiempo real.
-      </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start about-content opacity-0 translate-y-12">
+      <!-- Texto Principal (Narrativa & ATS Friendly) -->
+      <article class="prose prose-gray dark:prose-invert max-w-none" style="font-family: var(--font-main);">
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-[1.05rem]">
+          Mi perfil profesional combina lo mejor de dos mundos: cuento con una sólida formación como <strong>Técnico en Electrotecnia Industrial</strong> y soy <strong>Ingeniero de Sistemas e Informática</strong>. Esta doble perspectiva me otorga una visión integral para conectar los procesos físicos del piso de planta con soluciones de software de alto nivel.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-[1.05rem]">
+          En mi etapa enfocada en la automatización, me dediqué a la programación de <strong>PLCs</strong> y al desarrollo de sistemas <strong>SCADA</strong>, trabajando extensamente con tecnologías de <strong>Siemens</strong> y <strong>Schneider Electric</strong>. Esta experiencia forjó mi entendimiento profundo sobre cómo operan los entornos industriales críticos.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-[1.05rem]">
+          Hoy, como Ingeniero de Sistemas, integro soluciones que conectan el proceso de campo directamente con la gerencia. Transformo datos en tiempo real en mejores decisiones estratégicas, potenciando el análisis de datos con <strong>Inteligencia Artificial</strong>. Aplico arquitecturas avanzadas como <strong>RAG</strong> y <strong>MCP</strong> para desplegar agentes inteligentes que revolucionan la eficiencia operativa y la interacción con la información industrial.
+        </p>
+        
+        <!-- Datos Estructurados ATS (Oculto visualmente para el usuario, legible para parsers) -->
+        <div class="sr-only">
+          <h3>Contacto y Perfil Profesional ATS</h3>
+          <p>Candidato: Ronald Salazar Vásquez</p>
+          <p>Titulación: Ingeniero de Sistemas e Informática / Técnico en Electrotecnia Industrial</p>
+          <p>Especialidades y Keywords: Industria 4.0, IoT, Inteligencia Artificial, RAG, MCP, Automatización Industrial, SCADA, PLC, Siemens, Schneider Electric, Análisis de Datos, Mejora Continua, React, Next.js, Python.</p>
+          <ul>
+            <li>Email: ronaldsalazarvasquez@gmail.com</li>
+            <li>LinkedIn: https://www.linkedin.com/in/ronald-salazar-vasquez-1a5553156/</li>
+            <li>GitHub: https://github.com/ronaldsalazarvasquez</li>
+          </ul>
+        </div>
+      </article>
 
-      <p>
-        Lo que más me motiva son los <span class="text-[#0000ff] font-semibold">retos</span>.
-        Cada problema complejo es una oportunidad para crear soluciones que no solo funcionan,
-        sino que mejoran significativamente la vida de las personas y la eficiencia de los procesos.
-      </p>
+      <!-- Línea de Tiempo (Experiencia Estructurada) -->
+      <div class="relative border-l-2 border-emerald-100 dark:border-emerald-900/50 pl-6 space-y-10">
+        
+        <div class="relative">
+          <div class="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-[#0a0a0a]"></div>
+          <time class="text-sm font-bold text-emerald-600 dark:text-emerald-400 mb-1 block font-mono">2026 - Actualidad</time>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2" style="font-family: var(--font-heading);">SaaS Industrial & Arquitectura IoT</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" style="font-family: var(--font-main);">
+            Creación de <strong>ToolTrack</strong>, un SaaS para la gestión integral de talleres de mantenimiento industrial (checklists, herramientas, EPPs). Además, diseño y despliegue de <strong>EcoModulator</strong>, un ecosistema IoT para medición de eficiencia energética en planta, conectando biometría y sensores a plataformas Cloud.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-700 ring-4 ring-white dark:ring-[#0a0a0a]"></div>
+          <time class="text-sm font-bold text-gray-500 dark:text-gray-400 mb-1 block font-mono">2024 - 2025</time>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2" style="font-family: var(--font-heading);">Copiloto Industrial & Análisis de Causa Raíz</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" style="font-family: var(--font-main);">
+            Implementación de un <strong>Copiloto Industrial</strong> para facilitar la toma de decisiones en planta. El sistema utiliza el contexto del proceso operativo y propone un análisis previo mediante la metodología de los <strong>5 Porqués</strong>. El usuario colabora iterativamente con la IA para dar con la verdadera causa raíz de los problemas, aplicando soluciones definitivas para evitar su recurrencia.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-700 ring-4 ring-white dark:ring-[#0a0a0a]"></div>
+          <time class="text-sm font-bold text-gray-500 dark:text-gray-400 mb-1 block font-mono">Inicios - 2023</time>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2" style="font-family: var(--font-heading);">KPIs en Tiempo Real & Gestión de Mantenimiento</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" style="font-family: var(--font-main);">
+            Lectura de <strong>KPIs en tiempo real</strong> para monitorización de procesos críticos. Adicionalmente, liderazgo en la gestión de repuestos en almacenes piloto para materiales de alta rotación, aplicando metodologías <strong>Just in Time</strong> (Kaizen) siempre enfocadas en resultados operativos tangibles.
+          </p>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.to('.about-header', {
+      scrollTrigger: {
+        trigger: '#about',
+        start: 'top 85%',
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    gsap.to('.about-content', {
+      scrollTrigger: {
+        trigger: '#about',
+        start: 'top 75%',
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: 'power3.out'
+    });
+  });
+</script>

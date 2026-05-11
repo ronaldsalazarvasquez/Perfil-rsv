@@ -1,18 +1,18 @@
 ---
 import { projects } from '../data/projects';
 
-// Para paginar, mostraremos los primeros 4 por defecto
-// y el resto se manejará a través de JS
+// Paginación inicial: Mostrar 4 proyectos por defecto
+// Los demás se mostrarán dinámicamente con JavaScript
 const INITIAL_VISIBLE = 4;
 ---
 
 <section id="projects" class="py-24 md:py-32 px-4 relative">
-  <!-- Subtle Background Accent -->
+  <!-- Luces de fondo sutiles -->
   <div class="absolute right-0 top-1/4 w-[500px] h-[500px] bg-emerald-600/5 rounded-full blur-3xl md:blur-[120px] pointer-events-none"></div>
   <div class="absolute left-0 bottom-1/4 w-[500px] h-[500px] bg-cyan-600/5 rounded-full blur-3xl md:blur-[120px] pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto relative z-10">
-    <!-- Header -->
+    <!-- Cabecera de la sección -->
     <div class="mb-12 text-center md:text-left projects-header opacity-0 translate-y-12">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-sm mb-4 font-bold shadow-sm">
         Trayectoria
@@ -25,7 +25,7 @@ const INITIAL_VISIBLE = 4;
       </p>
     </div>
 
-    <!-- Filter Buttons -->
+    <!-- Botones de filtrado por categoría -->
     <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-24 project-filters opacity-0 translate-y-8">
       {['Todos', ...new Set(projects.map(p => p.category).filter(Boolean))].map((cat, index) => (
         <button 
@@ -38,11 +38,11 @@ const INITIAL_VISIBLE = 4;
       ))}
     </div>
 
-    <!-- Timeline Container -->
+    <!-- Contenedor principal de la línea de tiempo -->
     <div class="relative space-y-24 md:space-y-32" id="timeline-container">
-      <!-- Central Line Base (Gris/Claro) -->
+      <!-- Línea base central (Gris claro) -->
       <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-2 bg-gray-200 dark:bg-white/5 rounded-full -translate-x-1/2 overflow-hidden">
-         <!-- Scroll Progress Line -->
+         <!-- Línea de progreso interactiva (Scroll) -->
          <div id="scroll-line-progress" class="absolute top-0 left-0 w-full bg-gradient-to-b from-emerald-400 to-emerald-600 rounded-full origin-top transform scale-y-0 h-full"></div>
       </div>
 
@@ -51,32 +51,32 @@ const INITIAL_VISIBLE = 4;
         const isHidden = index >= INITIAL_VISIBLE;
         return (
           <div 
-            class={`project-card flex flex-col md:flex-row gap-8 md:gap-16 items-center relative z-10 
+            class={`project-card flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-center relative z-10 
               ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}
               ${isHidden ? 'hidden-project hidden' : 'opacity-0 translate-y-16'}
             `}
             data-index={index}
             data-category={project.category}
           >
-            <!-- Timeline Node -->
+            <!-- Nodo circular de la línea de tiempo -->
             <div class="timeline-node hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white dark:bg-[#050810] border-[4px] border-gray-300 dark:border-gray-700 z-20 shadow-md transition-colors duration-300"></div>
 
-            <!-- Image Side -->
-            <a href={`/project/${project.id}`} class="w-full md:w-1/2 group block relative rounded-[2rem] overflow-hidden bg-white dark:bg-transparent dark:glass-dark border-[3px] border-gray-100 dark:border-white/5 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:-translate-y-2 transition-all duration-300 shadow-xl dark:shadow-none mt-4 md:mt-0">
-              <div class="relative h-[280px] md:h-[400px] overflow-hidden w-full">
-                <!-- Overlay Hover -->
-                <div class="absolute inset-0 bg-emerald-500/10 dark:bg-emerald-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+            <!-- Lado visual (Imagen del proyecto) -->
+            <a href={`/project/${project.id}`} class="w-full md:w-1/2 group block relative rounded-[2rem] overflow-hidden bg-gray-100 dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 hover:-translate-y-2 transition-all duration-300 shadow-xl dark:shadow-none mt-4 md:mt-0">
+              <div class="relative aspect-[4/3] lg:aspect-video overflow-hidden w-full">
+                <!-- Capa oscura al hacer hover (Sutil, sin verde) -->
+                <div class="absolute inset-0 bg-black/5 dark:bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                 
                 <img
                   src={project.image}
                   alt={project.title}
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   onerror={`this.src='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Crect fill="%23111" width="800" height="600"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="30" fill="%2310b981"%3E${project.title}%3C/text%3E%3C/svg%3E'`}
                   loading="lazy"
                   decoding="async"
                 />
                 
-                <!-- View Details Banner -->
+                <!-- Etiqueta flotante "Analizar Detalle" -->
                 <div class="absolute bottom-6 left-0 right-0 flex justify-center translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-20">
                   <span class="inline-flex items-center gap-2 text-white font-bold bg-gray-900 dark:bg-emerald-600 shadow-xl px-6 py-3 rounded-full">
                     Analizar Detalle <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -85,28 +85,28 @@ const INITIAL_VISIBLE = 4;
               </div>
             </a>
 
-            <!-- Content Side -->
+            <!-- Lado de contenido (Texto y Metadatos) -->
             <div class={`w-full md:w-1/2 flex flex-col ${isEven ? 'md:items-start md:text-left' : 'md:items-start md:text-left'} text-center md:text-left`}>
-              <div class="text-emerald-500 dark:text-emerald-400 text-sm font-bold mb-3 tracking-wider uppercase bg-emerald-50 dark:bg-emerald-500/10 inline-block px-3 py-1 rounded-full mx-auto md:mx-0">
+              <div class="text-emerald-500 dark:text-emerald-400 text-xs md:text-sm font-bold mb-2 tracking-wider uppercase bg-emerald-50 dark:bg-emerald-500/10 inline-block px-3 py-1 rounded-full mx-auto md:mx-0">
                 {project.subtitle}
               </div>
               
-              <h3 class="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900 dark:text-white hover:text-emerald-500 transition-colors cursor-pointer" style="font-family: var(--font-heading);">
+              <h3 class="text-2xl lg:text-3xl font-extrabold mb-3 text-gray-900 dark:text-white hover:text-emerald-500 transition-colors cursor-pointer" style="font-family: var(--font-heading);">
                 <a href={`/project/${project.id}`}>{project.title}</a>
               </h3>
 
-              <div class="flex items-center justify-center md:justify-start gap-2 mb-6 text-sm text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-100 dark:bg-emerald-500/10 px-5 py-2.5 rounded-[1rem] inline-flex w-fit mx-auto md:mx-0 border-b-[3px] border-emerald-200 dark:border-emerald-500/20" style="font-family: var(--font-main);">
-                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              <div class="flex items-center justify-center md:justify-start gap-2 mb-4 text-xs md:text-sm text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-100 dark:bg-emerald-500/10 px-4 py-2 rounded-[1rem] inline-flex w-fit mx-auto md:mx-0 border-b-[3px] border-emerald-200 dark:border-emerald-500/20" style="font-family: var(--font-main);">
+                <svg class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                 <span>{project.impact}</span>
               </div>
 
-              <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed font-medium" style="font-family: var(--font-main);">
+              <p class="text-gray-600 dark:text-gray-400 text-sm lg:text-base mb-6 leading-relaxed font-medium" style="font-family: var(--font-main);">
                 {project.description}
               </p>
 
-              <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+              <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4 md:mb-0">
                 {project.tags.map((tag) => (
-                  <span class="px-4 py-2 bg-gray-100 border border-gray-200 dark:bg-white/5 text-gray-700 dark:text-gray-300 font-semibold text-sm rounded-[1rem] dark:border-white/10" style="font-family: var(--font-main);">
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-200 dark:bg-white/5 text-gray-700 dark:text-gray-300 font-semibold text-xs rounded-[1rem] dark:border-white/10" style="font-family: var(--font-main);">
                     {tag}
                   </span>
                 ))}
@@ -117,7 +117,7 @@ const INITIAL_VISIBLE = 4;
       })}
     </div>
 
-    <!-- Pagination Button -->
+    <!-- Botón de paginación (Ver más) -->
     {projects.length > INITIAL_VISIBLE && (
       <div class="mt-24 text-center pb-12" id="view-more-container">
         <button id="view-more-btn" class="group inline-flex items-center gap-3 px-8 py-5 bg-white xl:bg-opacity-100 dark:bg-[#111] dark:border-gray-700 text-gray-900 dark:text-white font-extrabold text-lg rounded-[2rem] border-2 border-gray-200 border-b-[6px] hover:border-b-[3px] hover:translate-y-[3px] active:border-b-[2px] active:translate-y-[4px] transition-all duration-150 shadow-sm" style="font-family: var(--font-main);">
@@ -136,7 +136,7 @@ const INITIAL_VISIBLE = 4;
   gsap.registerPlugin(ScrollTrigger);
 
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Header reveal (Springy bounce)
+    // 1. Animación de entrada de la cabecera (Efecto rebote)
     gsap.to('.projects-header', {
       scrollTrigger: {
         trigger: '#projects',
@@ -160,7 +160,7 @@ const INITIAL_VISIBLE = 4;
       ease: 'back.out(1.7)'
     });
 
-    // 2. Timeline Dynamic Line Fill
+    // 2. Animación dinámica de la línea de tiempo al hacer scroll
     const timelineContainer = document.getElementById('timeline-container');
     const scrollLine = document.getElementById('scroll-line-progress');
     
@@ -176,7 +176,7 @@ const INITIAL_VISIBLE = 4;
         ease: "none"
       });
 
-      // Lighting up nodes efficiently without layout thrashing
+      // Iluminar los nodos de la línea de forma eficiente (sin layout thrashing)
       document.querySelectorAll('.timeline-node').forEach((node) => {
         const nodeElement = node as HTMLElement;
         ScrollTrigger.create({
@@ -196,7 +196,7 @@ const INITIAL_VISIBLE = 4;
       });
     }
 
-    // 3. Filter Logic
+    // 3. Lógica de filtrado de proyectos por categoría
     const filterBtns = document.querySelectorAll('.filter-btn');
     const allCards = document.querySelectorAll('.project-card');
     const viewMoreContainer = document.getElementById('view-more-container');
@@ -222,7 +222,7 @@ const INITIAL_VISIBLE = 4;
           const cardCategory = cardEl.getAttribute('data-category');
           
           if (category === 'Todos' || cardCategory === category) {
-            // Respect INITIAL_VISIBLE if 'Todos' and View More hasn't been clicked
+            // Respetar límite inicial si la categoría es 'Todos' y no se ha hecho clic en "Ver más"
             if (category === 'Todos' && !hasClickedViewMore && visibleCount >= 4) {
               cardEl.classList.add('hidden', 'hidden-project');
             } else {
@@ -250,7 +250,7 @@ const INITIAL_VISIBLE = 4;
       });
     });
 
-    // 4. Initial Cards Reveal
+    // 4. Animación de entrada de las tarjetas iniciales
     const visibleCards = document.querySelectorAll('.project-card:not(.hidden)');
     visibleCards.forEach((card) => {
       gsap.to(card, {
@@ -265,7 +265,7 @@ const INITIAL_VISIBLE = 4;
       });
     });
 
-    // 5. View More Logic
+    // 5. Lógica del botón "Ver Todos los Proyectos"
     const viewMoreBtn = document.getElementById('view-more-btn');
     if (viewMoreBtn && viewMoreContainer) {
       viewMoreBtn.addEventListener('click', () => {

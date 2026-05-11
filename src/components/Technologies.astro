@@ -12,7 +12,7 @@ const technologies = [
   { name: 'TensorFlow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg' }
 ];
 
-// Duplicate for smooth infinite scrolling
+// Duplicar el array original para asegurar un scroll infinito fluido sin espacios en blanco
 const marqueeTechs = [...technologies, ...technologies];
 ---
 
@@ -29,10 +29,10 @@ const marqueeTechs = [...technologies, ...technologies];
     </div>
   </div>
 
-  <!-- Marquee Container -->
+  <!-- Contenedor del carrusel infinito (Marquee) -->
   <div class="relative w-full z-10 flex flex-col gap-6 opacity-0 tech-marquee-container translate-y-12 mt-10">
 
-    <!-- Track 1 (Left) -->
+    <!-- Pista 1: Desplazamiento hacia la izquierda -->
     <div class="flex marquee-track">
       <div class="flex animate-marquee whitespace-nowrap gap-6 shrink-0 px-3">
         {marqueeTechs.map((tech) => (
@@ -42,7 +42,7 @@ const marqueeTechs = [...technologies, ...technologies];
           </div>
         ))}
       </div>
-      <!-- Duplicate the exact same to fill the gap safely -->
+      <!-- Duplicado exacto oculto a lectores de pantalla para rellenar el ciclo -->
       <div class="flex animate-marquee whitespace-nowrap gap-6 shrink-0 px-3" aria-hidden="true">
         {marqueeTechs.map((tech) => (
           <div class="flex items-center gap-4 px-6 py-4 bg-white dark:bg-[#0a0a0a] rounded-xl border border-gray-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all cursor-default shadow-sm">
@@ -53,7 +53,7 @@ const marqueeTechs = [...technologies, ...technologies];
       </div>
     </div>
 
-    <!-- Track 2 (Right / Reverse) -->
+    <!-- Pista 2: Desplazamiento hacia la derecha (Inverso) -->
     <div class="flex marquee-track">
       <div class="flex animate-marquee-reverse whitespace-nowrap gap-6 shrink-0 px-3">
         {marqueeTechs.reverse().map((tech) => (
@@ -106,7 +106,7 @@ const marqueeTechs = [...technologies, ...technologies];
     backface-visibility: hidden;
   }
 
-  /* Pause on hover for better UX */
+  /* Pausar la animación al pasar el cursor para mejorar la accesibilidad y UX */
   .marquee-track:hover .animate-marquee,
   .marquee-track:hover .animate-marquee-reverse {
     animation-play-state: paused;
